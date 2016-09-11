@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 
-var createFolder = require('./lib/create-folders');
+
 
 if(require.main === module){
   //Cli
-  createFolder(function(){
-    console.log("Finished");
-    process.exit(1);
-  });
+  /**
+    process.argv[0] = "/usr/bin/nodejs"
+    process.argv[1] = "/usr/bin/jgen";
+
+  */
+
+  if(process.argv[2]==="setup"){
+    var setup = require('./lib/setup');
+    setup();
+  }
+
 }else{
   throw new Exception("This is a command line tool. Do not require this library in your scripts");
 }

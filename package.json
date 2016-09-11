@@ -15,7 +15,8 @@
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
     "commander": "^2.9.0",
-    "lodash": "^4.15.0"
+    "lodash": "^4.15.0",
+    "jlogger": "^1.2.0"
   },
   "author": "Jibin Mathews <jibinmathews7@gmail.com>",
   "license": "ISC"

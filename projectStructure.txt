@@ -1,0 +1,33 @@
+bin
+  #one time scripts
+config
+  - development.js
+  - production.js
+  - test.js
+  - staging.js
+  - index.js
+framwork
+  - express.js
+  - bootstrap.js
+  - utils.js
+modules
+   - <models>
+      - route.js
+      - models
+        - index.js
+      -operations
+        -index.js
+      - controller.js
+public
+   - js
+   - css
+   - index.html
+- server.js
+- packege.json
+- .gitignore
+- .npmignore
+- .foreverignore
+
+
+
+

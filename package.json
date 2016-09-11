@@ -1,0 +1,22 @@
+{
+  "name": "simple-generator",
+  "version": "1.0.0",
+  "description": "A command line tool to generator a wireframe structure for your node app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "jgen": "./index.js"
+  },
+  "dependencies": {
+    "async": "^2.0.1",
+    "chalk": "^1.1.3",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^2.9.0",
+    "lodash": "^4.15.0"
+  },
+  "author": "Jibin Mathews <jibinmathews7@gmail.com>",
+  "license": "ISC"
+}

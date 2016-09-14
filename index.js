@@ -1,6 +1,7 @@
 #!/usr/bin/env node
+"use strict";
 
-
+var chalk = require('chalk');
 
 if(require.main === module){
   //Cli
@@ -11,11 +12,14 @@ if(require.main === module){
   */
 
 process.on('unhandledRejection', (reason, p) => {
-    console.log("Unhandled Rejection at: Promise ", p, " reason: ", reason);
-    // application specific logging, throwing an error, or other logic here
+    console.log(chalk.red("Unhandled Rejection at: Promise "), p, chalk.red(" reason: "), chalk.red(reason));
 });
 
-  var jgen = require('./lib/setup');
+process.on('unhandledException', (error, m)=> {
+  console.log(chalk.red("Unhandled Exception at: Error "), m, chalk.red(" reason: "), chalk.red(error));
+})
+
+  var jgen = require('./lib');
   if(process.argv[2]==="setup"){
     jgen.setup();
   }else if(process.argv[2]==="model"){

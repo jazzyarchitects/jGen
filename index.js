@@ -20,7 +20,7 @@ process.on('unhandledException', (error, m)=> {
 })
 
   var jgen = require('./lib');
-  if(process.argv[2]==="setup"){
+  if(process.argv[2]==="init"){
     jgen.setup();
   }else if(process.argv[2]==="model"){
     if(!process.argv[3]){

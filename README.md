@@ -17,7 +17,7 @@ Create a new folder where you want to setup your project.
 Open this folder in your terminal and execute
 
 ```shell
-  $ jgen setup
+  $ jgen init
 ```
 
 Enter your project name and other details as you generally do while **npm init**.

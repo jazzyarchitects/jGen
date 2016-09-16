@@ -30,6 +30,6 @@ process.on('unhandledException', (error, m)=> {
   }
 
 }else{
-  throw new Exception("This is a command line tool. Do not require this library in your scripts");
+  exports.apiAuthentication = require('./lib/scripts/api-authentication');
 }
 

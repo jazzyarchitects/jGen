@@ -68,3 +68,11 @@ It will create the basic CRUD(Create, Read, Update, Delete) routes. All the rout
     }
     ```
 4. Java inspired logger (<a href="https://www.npmjs.com/package/jlogger">jlogger</a>) is integrated by default. Log directly anywhere from the app using *Log.e()*, *Log.w()*, *Log.i()* or *Log.d()*.
+
+##Backward Compatibility
+Due to the library still being in development, incase you are pulling the repository after initialising project, it is recommended to run
+
+```
+$ jgen update
+```
+to incorporate new featues.

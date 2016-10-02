@@ -22,6 +22,8 @@ process.on('unhandledException', (error, m)=> {
   var jgen = require('./lib');
   if(process.argv[2]==="init"){
     jgen.setup();
+  }else if(process.argv[2]==="fix" || process.argv[2]==="update"){
+    jgen.fix();
   }else if(process.argv[2]==="model"){
     if(!process.argv[3]){
       throw new Error("Model name cannot be empty");

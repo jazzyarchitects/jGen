@@ -1,5 +1,5 @@
 {
-  "name": "simple-generator",
+  "name": "jgen",
   "version": "1.0.0",
   "description": "A command line tool to generator a wireframe structure for your node app",
   "main": "index.js",

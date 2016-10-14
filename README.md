@@ -1,4 +1,4 @@
-# jGen (Alpha Preview)
+# jGen
 A cli to create node project structure
 
 ***NOTE:

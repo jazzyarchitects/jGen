@@ -8,7 +8,7 @@ if(require.main === module){
   var ip = argv._.splice(2);
 
   global.color = argv.c || argv.color;
-  console.log(argv);
+  // console.log(argv);
   //Cli
   /**
     process.argv[0] = "/usr/bin/nodejs"

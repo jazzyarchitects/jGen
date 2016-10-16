@@ -12,6 +12,7 @@
   "dependencies": {
     "async": "^2.0.1",
     "chalk": "^1.1.3",
+    "handlebars": "^4.0.5",
     "inquirer": "^1.1.3",
     "jlogger": "^1.2.0",
     "lodash": "^4.15.0",

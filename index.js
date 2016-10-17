@@ -5,9 +5,27 @@
 if(require.main === module){
   var chalk = require('chalk');
   var argv = require('minimist')(process.argv);
+  var path = require('path');
+  var fs = require('fs');
   var ip = argv._.splice(2);
 
+
+  console.log("");
+  process.on('exit', ()=>{
+    console.log("");
+  });
+
+  if(!fs.existsSync(path.join(process.cwd(), "package.json"))){
+    // console.log("  "+chalk.bgWhite("                                                                       "));
+    // console.log("  "+chalk.bgWhite(" ")+chalk.red.bold("This is not the project root. Run this command  from the project root")+chalk.bgWhite(" "));
+    console.log(" | "+chalk.red.bold("This is not the project root. Run this command  from the project root")+" |");
+    // console.log("  "+chalk.bgWhite("                                                                       "));
+    process.exit(0);
+  }
+  var config = require(path.join(process.cwd(), "package"));
+
   global.color = argv.c || argv.color;
+  global.npmconfig = config;
   // console.log(argv);
   //Cli
   /**

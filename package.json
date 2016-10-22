@@ -4,7 +4,7 @@
   "description": "A command line tool to generator a wireframe structure for your node app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/jgen-init.js && mocha test/folder-structure.js"
   },
   "bin": {
     "jgen": "./index.js"
@@ -22,5 +22,10 @@
     "ora": "^0.3.0"
   },
   "author": "Jibin Mathews <jibinmathews7@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-files": "^1.4.0",
+    "request": "^2.75.0"
+  }
 }

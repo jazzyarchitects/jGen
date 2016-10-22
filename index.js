@@ -3,12 +3,11 @@
 
 
 if(require.main === module){
-  var chalk = require('chalk');
-  var argv = require('minimist')(process.argv);
-  var path = require('path');
-  var fs = require('fs');
-  var ip = argv._.splice(2);
-
+  let chalk = require('chalk');
+  let argv = require('minimist')(process.argv);
+  let path = require('path');
+  let fs = require('fs');
+  let ip = argv._.splice(2);
 
   console.log("");
   process.on('exit', ()=>{
@@ -16,24 +15,13 @@ if(require.main === module){
   });
 
   if(!fs.existsSync(path.join(process.cwd(), "package.json"))){
-    // console.log("  "+chalk.bgWhite("                                                                       "));
-    // console.log("  "+chalk.bgWhite(" ")+chalk.red.bold("This is not the project root. Run this command  from the project root")+chalk.bgWhite(" "));
     console.log(" | "+chalk.red.bold("This is not the project root. Run this command  from the project root")+" |");
-    // console.log("  "+chalk.bgWhite("                                                                       "));
     process.exit(0);
   }
-  var config = require(path.join(process.cwd(), "package"));
+  let config = require(path.join(process.cwd(), "package"));
 
   global.color = argv.c || argv.color;
   global.npmconfig = config;
-  // console.log(argv);
-  //Cli
-  /**
-    process.argv[0] = "/usr/bin/nodejs"
-    process.argv[1] = "/usr/bin/jgen";
-
-    */
-
     process.on('unhandledRejection', (reason, p) => {
       console.log(chalk.red("Unhandled Rejection at: Promise "), p, chalk.red(" reason: "), chalk.red(reason));
     });
@@ -42,7 +30,7 @@ if(require.main === module){
       console.log(chalk.red("Unhandled Exception at: Error "), m, chalk.red(" reason: "), chalk.red(error));
     })
 
-    var jgen = require('./lib');
+    let jgen = require('./lib');
 
     if(ip[0]==="init"){
       jgen.setup();
@@ -53,13 +41,13 @@ if(require.main === module){
         jgen.showModels();
       }
       if(ip[1].toLowerCase()==="remove"){
-        var arr = ip.splice(2, process.argv.length);
+        let arr = ip.splice(2, process.argv.length);
         jgen.removeModels(arr);
       }else{
         jgen.model(ip[1]);
       }
     }else if(ip[0]==="tree"){
-      var arr = ip.splice(1, process.argv.length);
+      let arr = ip.splice(1, process.argv.length);
       if(arr.length>0){
         jgen.tree(arr);
       }else{
@@ -69,6 +57,6 @@ if(require.main === module){
 
   }else{
     exports.apiAuthentication = require('./lib/scripts/api-authentication');
-    exports.BaseUserSchema = require('./lib/schemas/user');
+    exports.Schema = require('./lib/schema');
   }
 

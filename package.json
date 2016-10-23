@@ -19,13 +19,16 @@
     "lodash": "^4.15.0",
     "minimist": "^1.2.0",
     "mongoose": "^4.6.3",
-    "ora": "^0.3.0"
+    "mute": "^2.0.6",
+    "ora": "^0.3.0",
+    "request": "^2.75.0"
   },
   "author": "Jibin Mathews <jibinmathews7@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-files": "^1.4.0",
+    "chai-http": "^3.0.0",
     "request": "^2.75.0"
   }
 }

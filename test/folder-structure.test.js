@@ -9,6 +9,9 @@ const chalk = require('chalk');
 
 chai.use(chaiFiles);
 let __folder = "mocha-test";
+if(!fs.existsSync(path.join(process.cwd(), __folder))){
+  __folder = "test-server";
+}
 
 let foldersList = ["config", "framework", "modules", "node_modules"];
 describe("Project Structure setup", function () {

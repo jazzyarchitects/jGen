@@ -16,6 +16,9 @@ const API_BASE = HTTP_BASE+"api";
 chai.use(chaiFiles);
 
 let __folder = "mocha-test";
+if(!fs.existsSync(path.join(process.cwd(), __folder))){
+  __folder = "test-server";
+}
 __folder = path.join(process.cwd(), __folder, "modules", "user");
 
 
@@ -90,8 +93,4 @@ describe("User API endpoints", ()=>{
       });
     });
   });
-
-  // after(()=>{
-  //   app.close();
-  // });
 });

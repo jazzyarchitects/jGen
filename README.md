@@ -76,3 +76,10 @@ Due to the library still being in development, incase you are pulling the reposi
 $ jgen update
 ```
 to incorporate new featues.
+
+
+## Todo
+1. Add redis caching
+2. Add logs for database transactions
+3. mocha test scripts for main server per model
+4. including api authentication

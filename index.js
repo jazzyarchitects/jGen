@@ -59,7 +59,7 @@ if(require.main === module){
   }
 
 }else{
-  exports.apiAuthentication = require('./lib/scripts/api-authentication');
+  exports.APIAuthentication = require('./lib/scripts/api-authentication');
   exports.Schema = require('./lib/schema');
 }
 

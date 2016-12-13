@@ -1,13 +1,12 @@
 #!/usr/bin/env node
-"use strict";
+'use strict';
 
-
-if(require.main === module){
-  let chalk = require('chalk');
-  let argv = require('minimist')(process.argv);
-  let path = require('path');
-  let fs = require('fs');
-  let ip = argv._.splice(2);
+if (require.main === module) {
+  const chalk = require('chalk');
+  const argv = require('minimist')(process.argv);
+  const path = require('path');
+  const fs = require('fs');
+  const ip = argv._.splice(2);
 
   console.log("");
   process.on('exit', ()=>{
@@ -15,9 +14,9 @@ if(require.main === module){
   });
 
   let config;
-  if(ip.indexOf("init")===-1){
-    if(!fs.existsSync(path.join(process.cwd(), "package.json"))){
-      console.log(" | "+chalk.red.bold("This is not the project root. Run this command  from the project root")+" |");
+  if (ip.indexOf("init") === -1) {
+    if (!fs.existsSync(path.join(process.cwd(), "package.json"))) {
+      console.log(" | " + chalk.red.bold("This is not the project root. Run this command  from the project root") + " |");
       process.exit(0);
     }
     config = require(path.join(process.cwd(), "package"));
@@ -35,30 +34,29 @@ if(require.main === module){
 
   let jgen = require('./lib');
 
-  if(ip[0]==="init"){
+  if (ip[0] === "init") {
     jgen.setup(ip[1]);
-  }else if(ip[0]==="fix" || ip[0]==="update"){
+  } else if (ip[0] === "fix" || ip[0] === "update") {
     jgen.fix();
-  }else if(ip[0]==="model"){
-    if(!ip[1]){
+  } else if (ip[0] === "model") {
+    if (!ip[1]) {
       jgen.showModels();
     }
-    if(ip[1].toLowerCase()==="remove"){
+    if (ip[1].toLowerCase() === "remove") {
       let arr = ip.splice(2, process.argv.length);
       jgen.removeModels(arr);
-    }else{
+    } else {
       jgen.model(ip[1]);
     }
-  }else if(ip[0]==="tree"){
+  } else if (ip[0] === "tree") {
     let arr = ip.splice(1, process.argv.length);
-    if(arr.length>0){
+    if (arr.length > 0) {
       jgen.tree(arr);
-    }else{
+    } else {
       jgen.tree();
     }
   }
-
-}else{
+} else {
   exports.APIAuthentication = require('./lib/scripts/api-authentication');
   exports.Schema = require('./lib/schema');
 }
